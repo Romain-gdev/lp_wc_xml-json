@@ -1,0 +1,37 @@
+<!-- DTD pour les fichiers examens -.- exercice 6 -->
+
+<!ELEMENT examen    (titre, date, questions) >
+<!ELEMENT titre     (#PCDATA)>
+<!ATTLIST examen     
+          code NMTOKEN #REQUIRED>
+<!ELEMENT date       EMPTY>
+<!ATTLIST date
+          mois (jan|fev|mar|avr|mai|jun|jui|aou|sep|oct|nov|dec) #REQUIRED
+          annee NMTOKEN #REQUIRED>
+<!ELEMENT questions (question, question, question, question, question,
+                     question?) >
+<!ELEMENT question  ((partie)+)>
+<!ELEMENT partie    (#PCDATA | partie)*>
+
+
+
+<!--
+
+
+    <!DOCTYPE examens [
+  <!ELEMENT examens (examen)*>
+  <!ELEMENT examen    (titre, date, questions)>
+  <!ELEMENT titre     (#PCDATA | important)*>
+  <!ATTLIST examen     
+            code NMTOKEN #REQUIRED>
+  <!ELEMENT date       EMPTY>
+  <!ATTLIST date
+            mois (jan|fev|mar|avr|mai|jun|jui|aou|sep|oct|nov|dec) #REQUIRED
+            annee NMTOKEN #REQUIRED>
+  <!ELEMENT questions (question, question, question, question, question,
+                      question?) >
+  <!ELEMENT question  ((partie)+)>
+  <!ELEMENT partie    (#PCDATA | partie)*>
+  <!ELEMENT important ANY>
+  ]>
+-->

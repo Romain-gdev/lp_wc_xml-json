@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="library" type="libraryType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="titleType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="lang"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="authorType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:date" name="born"/>
+      <xs:element type="xs:byte" name="age"/>
+      <xs:element type="xs:date" name="dead"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="characterType">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Peppermint Patty"/>
+            <xs:enumeration value="Snoopy"/>
+            <xs:enumeration value="Schroeder"/>
+            <xs:enumeration value="Lucy"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="born">
+        <xs:simpleType>
+          <xs:restriction base="xs:date">
+            <xs:enumeration value="1966-08-22"/>
+            <xs:enumeration value="1950-10-04"/>
+            <xs:enumeration value="1951-05-30"/>
+            <xs:enumeration value="1952-03-03"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:byte" name="age"/>
+      <xs:element name="qualification">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="bold, brash and tomboyish"/>
+            <xs:enumeration value="dog"/>
+            <xs:enumeration value="brought classical music to the Peanuts strip"/>
+            <xs:enumeration value="bossy, crabby and selfish"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="bookType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="isbn"/>
+      <xs:element type="titleType" name="title"/>
+      <xs:element type="authorType" name="author"/>
+      <xs:element type="characterType" name="character" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="available"/>
+  </xs:complexType>
+  <xs:complexType name="libraryType">
+    <xs:sequence>
+      <xs:element type="bookType" name="book"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

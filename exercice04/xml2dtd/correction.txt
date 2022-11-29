@@ -1,0 +1,1 @@
+java -cp dtdgen.jar DTDGenerator  library03.xml >  library03.dtd

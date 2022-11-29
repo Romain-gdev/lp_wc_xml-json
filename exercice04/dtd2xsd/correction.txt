@@ -1,0 +1,1 @@
+perl dtd2xsd.pl  library03.dtd > library03.xsd 

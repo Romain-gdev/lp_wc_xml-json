@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Exercice" default="main" basedir=".">
+
+    <property file="project.properties" />
+
+    <property name="xmlpath" value="${xmlpath}" />
+
+    <path id="montravail.classpath"> 
+        <fileset id="montravail.classpath.fileset" dir="${lib.dir}">
+            <include name="${istack}"/>
+            <include name="${javax}"/>
+            <include name="${jaxbapi}"/>
+            <include name="${jaxbimpl}"/>
+        </fileset>  
+    </path>
+
+
+    <!-- run descriptions : 'ant -projecthelp'  -->
+
+    <target name="main" depends="run_classname_pathelement" description="call 'jar' target, xmlpath wich is the path to library03.xml"/>
+
+    <target name="clean" description="Delete generated directories 'build'">
+        <delete dir="${build.dir}"/>
+    </target>
+    <target name="run_classname_pathelement" depends="jar_cp_with_path" description="run 'Operation.jar' from 'build/jar' with pathelement">
+        <java classname="${main-class}">
+            <arg line="${xmlpath}"/>
+            <classpath>
+                <pathelement location="${jar.dir}/${project.shortname}.jar"/>
+                <path refid="montravail.classpath"/>
+            </classpath>
+        </java>
+    </target>
+        
+    <target name="compile_cp_with_path" depends="clean" description="Compile Source Code from 'src' to 'build/classes' with classpath '**/*.jar' from lib">
+        <mkdir dir="${classes.dir}"/>
+        <copy todir="${classes.dir}">
+            <fileset dir="${src.dir}" excludes="**/*.java"/>
+        </copy>
+        <javac srcdir="${src.dir} " destdir="${classes.dir}">
+            <classpath refid="montravail.classpath"/>
+        </javac>
+    </target>
+
+    <target name="jar_cp_with_path" depends="compile_cp_with_path" description="create the jar file 'montravail.jar' from 'build/classes' to 'build/jar' with the main-class in manifest and with classpath '**/*.jar' from lib">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${project.shortname}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+</project>

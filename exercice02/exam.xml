@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE examens [
+  <!ELEMENT examens (examen)*>
+  <!ELEMENT examen    (titre, date, questions)>
+  <!ELEMENT titre     (#PCDATA | important)*>
+  <!ATTLIST examen     
+            code NMTOKEN #REQUIRED>
+  <!ELEMENT date       EMPTY>
+  <!ATTLIST date
+            mois (jan|fev|mar|avr|mai|jun|jui|aou|sep|oct|nov|dec) #REQUIRED
+            annee NMTOKEN #REQUIRED>
+  <!ELEMENT questions (question, question, question, question, question,
+                      question?) >
+  <!ELEMENT question  ((partie)+)>
+  <!ELEMENT partie    (#PCDATA | partie)*>
+  <!ELEMENT important ANY>
+  ]>
+
+<!-- exemple de fichier examen  -->
+<examens>
+  <examen code="1">
+    <titre>Outils et documents <important>XML</important></titre>
+    <date annee="2008" mois="oct"/>
+    <questions>
+      <question><partie>        </partie></question>
+      <question><partie> bla bla</partie></question>
+      <question><partie> bla bla</partie><partie> bla </partie></question>
+      <question><partie>        </partie></question>
+      <question><partie>        </partie></question>
+    </questions>
+  </examen>
+</examens>  

@@ -1,0 +1,23 @@
+ajout ligne 3 ==> <!DOCTYPE xml [
+					  <!ENTITY xml "aaaaaaa">
+					]>
+						==> pour corriger la ligne 17 
+						==><titre>Autour d'&xml;</titre>
+					
+ligne 13 ==> <auteur>Victor Hugo <editeur>Lacroix </auteur> et Verboeckhoven</editeur> 
+  			==> <auteur>Victor Hugo   </auteur> 
+    			<editeur>Lacroixet Verboeckhoven</editeur>
+    			
+ligne 15 ==> un autre livre -->
+			==> <!-- un autre livre -->
+    			
+    			
+    	
+ligne 16 ==> <livre annee=1998 ISBN="2253096343">
+			==> <livre annee="1998" ISBN="2253096343">
+			
+
+ligne 40 ajout ==>  </html>
+
+
+

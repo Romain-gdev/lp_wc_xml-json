@@ -1,0 +1,13 @@
+{
+    "java.project.outputPath": "exercice05/main/bin",
+    "java.project.sourcePaths": [
+        "exercice05/main/src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "exercice05/main/lib/istack-commons-runtime-4.0.0-M3.jar",
+        "exercice05/main/lib/javax.activation-api-1.2.0.jar",
+        "exercice05/main/lib/jaxb-api-2.4.0-b180830.0359.jar",
+        "exercice05/main/lib/jaxb-impl-2.4.0-b180830.0438.jar"
+    ]
+}
