@@ -22,6 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+/**
+* ESTEVES Mathéo
+* GAUTIER Romain
+*/
 
 /**
  * <p>Classe Java pour anonymous complex type.
