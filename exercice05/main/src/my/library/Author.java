@@ -20,7 +20,10 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
+/**
+* ESTEVES Mathéo
+* GAUTIER Romain
+*/
 /**
  * <p>Classe Java pour anonymous complex type.
  * 
