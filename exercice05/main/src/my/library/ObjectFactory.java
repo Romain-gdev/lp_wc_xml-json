@@ -15,6 +15,10 @@ import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 
+/*
+* ESTEVES Matheo
+* GAUTIER Romain
+*/
 
 /**
  * This object contains factory methods for each 
