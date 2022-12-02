@@ -18,6 +18,10 @@ import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+/*
+* ESTEVES Matheo
+* GAUTIER Romain
+*/
 
 /**
  * <p>Classe Java pour anonymous complex type.
